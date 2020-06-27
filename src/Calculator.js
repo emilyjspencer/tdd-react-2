@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Display from './Display';
 
+import './Calculator.css';
+
 class Calculator extends Component {
   state = {
       displayValue: '0',
