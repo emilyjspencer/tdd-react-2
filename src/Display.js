@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 const Display = ({ displayValue }) => 
   <div className="display-container">
-
+    <p className="display-value"></p>
+      {displayValue}
   </div>
     
 Display.propTypes = { displayValue: PropTypes.string.isRequired };

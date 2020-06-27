@@ -12,5 +12,10 @@ it('should render a <div />', () => {
   expect(wrapper.find('div').length).toEqual(1)
 });
 
+it('renders the actual value of displayValue', () => {
+  wrapper.setProps({ displayValue: '10' });
+  expect(wrapper.text()).toEqual('10');
+});
+
 
 });
