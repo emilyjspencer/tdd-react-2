@@ -11,10 +11,13 @@ class Calculator extends Component {
   }
 
   render() {
+
+    const { displayValue } = this.state;
+
       return(
           <div className="calculator-container">
            <h1>Hi - I am a Calculator</h1>
-           <Display />
+           <Display displayValue={displayValue} />
           </div>
       );
   }

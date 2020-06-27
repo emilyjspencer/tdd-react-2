@@ -14,6 +14,6 @@ describe('Calculator', () => {
   })
 
   it('should render an instance of the Display Component', () => {
-    expect(wrapper.containsMatchingElement(<Display />)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<Display displayValue={wrapper.instance().state.displayValue} />)).toEqual(true);
   });
 });
