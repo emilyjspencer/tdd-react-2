@@ -3,15 +3,28 @@
 
 :root {
   --calculator-background-color: #d9b3ff;
+  --display-background-color: #1d1f1f;
 
   --main-font: 'Yellowtail', sans-serif;
 
-  --calculator-height: 72%;
+  --display-text-color: #23e000;
+
+  --display-text-size: 4em;
+
+  --display-text-weight: 400;
+
+  --calculator-height: 86%;
   --calculator-width: 36%;
+
+  --display-height: 24%;
+  --display-width: 62%;
 }
 
 @media screen and (max-width: 1024px) {
   :root {
+
+  --display-text-size: 10em;
+  
   --calculator-height: 100%;
   --calculator-width: 100%;
 }
