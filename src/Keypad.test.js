@@ -17,8 +17,13 @@ describe('Keypad', () => {
         );
     });
 
-  it ('it should render a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(1);
+  it ('it should render 2 <div />\'s', () => {
+    expect(wrapper.find('div').length).toEqual(2);
+  });
+
+  it('renders the value of the numbers prop', () => {
+    wrapper.setProps({numbers: ['4', '5', '6']});
+    expect(wrapper.find('.numbers-container').text()).toEqual('456');
   });
 
 });
