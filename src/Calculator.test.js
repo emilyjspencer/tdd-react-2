@@ -82,6 +82,11 @@ describe('Calculator', () => {
       wrapper.instance().updateDisplay('3');
       expect(wrapper.state('displayValue')).toEqual('23');
     });
+
+    it('sets the displayValue to 0 if the displayValue is not entered', () => {
+      wrapper.instance().updateDisplay('0');
+      expect(wrapper.state('displayValue')).toEqual('0');
+    });
   });
 
 });
