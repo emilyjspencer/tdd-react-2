@@ -182,6 +182,14 @@ describe('Calculator', () => {
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('5');
     });
+
+    it('selecting the division operator updates the displayValue so that it is the quotient of the storedValue and the displayValue', () => {
+      wrapper.setState({ storedValue: '8' });
+      wrapper.setState({ displayValue: '2' });
+      wrapper.setState({ selectedOperator: '/' });
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('4');
+    });
   });
 
 

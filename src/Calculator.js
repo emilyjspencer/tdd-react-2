@@ -28,6 +28,8 @@ class Calculator extends Component {
       displayValue = storedValue + displayValue;
     } else if(selectedOperator === '-' ) {
       displayValue = storedValue - displayValue;
+    } else {
+      displayValue = storedValue / displayValue;
     }
        
 
