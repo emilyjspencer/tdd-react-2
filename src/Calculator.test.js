@@ -95,7 +95,7 @@ describe('Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('4');
     });
 
-    it('will always display 0 even if 0 is pressed multiple times', () => {
+    it('will always display a single 0 even if 0 is pressed multiple times', () => {
       wrapper.instance().updateDisplay('0');
       wrapper.instance().updateDisplay('0');
       wrapper.instance().updateDisplay('0');
