@@ -37,6 +37,10 @@ class Calculator extends Component {
 
     selectedOperator = '';
 
+    if(displayValue === 'NaN') {
+      displayValue = '0';
+    }
+
     this.setState({ displayValue, selectedOperator, storedValue: updateStoredValue });
   };
 

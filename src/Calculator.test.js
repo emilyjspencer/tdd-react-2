@@ -190,6 +190,14 @@ describe('Calculator', () => {
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('4');
     });
+
+    it('updates the displayValue to 0 if the calculation results in something that is not a number', () => {
+      wrapper.setState({ storedValue: '4' });
+      wrapper.setState({ displayValue: 'string' });
+      wrapper.setState({ selectedOperator: '/' });
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('0');
+    }); 
   });
 
 
