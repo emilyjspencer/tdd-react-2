@@ -137,6 +137,20 @@ describe('Calculator', () => {
       wrapper.instance().setOperator('+');
       expect(wrapper.state('storedValue')).toEqual('5');
     });
+
+    it('updates the value of displayValue to 0', () => {
+      wrapper.setState({ displayValue: '4' });
+      wrapper.instance().setOperator('*');
+      expect(wrapper.state('displayValue')).toEqual('0');
+    });
+
+    it('if the selectedOperator is not an empty string, it does not update storedValue', () => {
+      wrapper.setState({ displayValue: '6' });
+      wrapper.instance().setOperator('-');
+      expect(wrapper.state('storedValue')).toEqual('6');
+      wrapper.instance().setOperator('+');
+      expect(wrapper.state('storedValue')).toEqual('6');
+    });
   });
 
 });

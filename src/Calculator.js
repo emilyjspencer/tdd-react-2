@@ -21,13 +21,12 @@ class Calculator extends Component {
     let { displayValue, selectedOperator, storedValue } = this.state;
 
     if(selectedOperator === '') {
-
-    storedValue = displayValue;
-    displayValue = '0';
-    selectedOperator = value;
+      storedValue = displayValue;
+      displayValue = '0';
+      selectedOperator = value;
+    } else {
+      selectedOperator = value;
     }
-
-    selectedOperator = value;
 
     this.setState({ displayValue, selectedOperator, storedValue });
     
