@@ -198,6 +198,15 @@ describe('Calculator', () => {
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('0');
     }); 
+
+    it('updates the displayValue to be 0 if the result of the calculation results in an undefined number', () => {
+      wrapper.setState({ storedValue: '3' });
+      wrapper.setState({ displayValue: '0' });
+      wrapper.setState({ selectedOperator: '*' });
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('0');
+
+    })
   });
 
 

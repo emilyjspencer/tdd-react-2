@@ -39,6 +39,8 @@ class Calculator extends Component {
 
     if(displayValue === 'NaN') {
       displayValue = '0';
+    } else if( displayValue === 'Undefined') {
+      displayValue = '0';
     }
 
     this.setState({ displayValue, selectedOperator, storedValue: updateStoredValue });
