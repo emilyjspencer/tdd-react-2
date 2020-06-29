@@ -41,7 +41,7 @@ const Keypad = ({
           <Key 
             keyAction={callOperator}
             keyType="submit-key"
-            keyValue=""
+            keyValue="="
           />
           </div>
       </div>

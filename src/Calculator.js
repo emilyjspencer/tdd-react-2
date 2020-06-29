@@ -8,9 +8,17 @@ class Calculator extends Component {
   state = {
       displayValue: '0',
       numbers: ['9', '8', '7', '6', '5', '4', '3', '2', '1', '.', '0', 'ce'],
-      operators: ['/', 'x', '-', '+'],
+      operators: ['/', '*', '-', '+', '='],
       selectedOperator: '',
       storedValue: ''
+  }
+
+  componentDidMount = () => {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+
+  componentWillUnmount = () => {
+   document.removeEventListener('keydown', this.handleKeyPress);
   }
 
   callOperator = () => {
@@ -28,8 +36,10 @@ class Calculator extends Component {
       displayValue = storedValue + displayValue;
     } else if(selectedOperator === '-' ) {
       displayValue = storedValue - displayValue;
-    } else {
+    } else if(selectedOperator === '/') {
       displayValue = storedValue / displayValue;
+    } else {
+      displayValue = '0';
     }
        
 
@@ -75,6 +85,21 @@ class Calculator extends Component {
     this.setState({ displayValue });
   };
 
+  handleKeyPress = (event) => {
+    const { numbers, operators } = this.state;
+
+    if(event.key === 'Backspace') this.updateDisplay('ce');
+    if(event.key === 'Enter' || event.key === '=') this.callOperator();
+
+    numbers.forEach(number => {
+      if(event.key === number) this.updateDisplay(number);
+    });
+
+    operators.forEach(operator => {
+      if(event.key === operator) this.setOperator(operator);
+    });
+  }
+
   render() {
 
     const { displayValue, numbers, operators } = this.state;
@@ -84,6 +109,7 @@ class Calculator extends Component {
           <div className="calculator-container">
            <Display displayValue={displayValue} />
            <Keypad  
+             handleKeyPress={this.handleKeyPress}
              callOperator={this.callOperator}
              numbers={numbers}
              operators={operators}

@@ -27,10 +27,12 @@ describe('Calculator', () => {
       <Display displayValue={wrapper.instance().state.displayValue} />,
       <Keypad 
         callOperator={wrapper.instance().callOperator}
+        setOperator={wrapper.instance().setOperator}
+        handleKeyPress={wrapper.instance().handleKeyPress}
         numbers={wrapper.instance().state.numbers}
-        operators={wrapper.instance().operators}
+        operators={wrapper.instance().state.operators}
         updateDisplay={wrapper.instance().updateDisplay}
-        />
+        />,
     ])).toEqual(true);
   });
 
