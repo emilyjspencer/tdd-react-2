@@ -120,4 +120,17 @@ describe('Calculator', () => {
     });
   });
 
+  describe('setOperator', () => {
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<Calculator />));
+
+    it('knows which operator has been selected', () => {
+      wrapper.instance().setOperator('+');
+      expect(wrapper.state('selectedOperator')).toEqual('+');
+      wrapper.instance().setOperator('/');
+      expect(wrapper.state('selectedOperator')).toEqual('/')
+    });
+  });
+
 });

@@ -17,7 +17,13 @@ class Calculator extends Component {
 
   };
 
-  setOperator = () => {
+  setOperator = (value) => {
+    let { displayValue, selectedOperator, storedValue } = this.state;
+
+
+    selectedOperator = value;
+
+    this.setState({ displayValue, selectedOperator, storedValue });
     
   };
 
