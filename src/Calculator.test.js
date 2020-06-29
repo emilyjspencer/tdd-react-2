@@ -87,6 +87,13 @@ describe('Calculator', () => {
       wrapper.instance().updateDisplay('0');
       expect(wrapper.state('displayValue')).toEqual('0');
     });
+
+    it('removes the initial 0 from displayValue when values are entered', () => {
+      wrapper.instance().updateDisplay('0');
+      expect(wrapper.state('displayValue')).toEqual('0');
+      wrapper.instance().updateDisplay('4');
+      expect(wrapper.state('displayValue')).toEqual('4');
+    });
   });
 
 });
