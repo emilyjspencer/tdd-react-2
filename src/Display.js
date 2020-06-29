@@ -5,8 +5,9 @@ import './Display.css';
 
 const Display = ({ displayValue }) => (
   <div className="display-container">
-    <p className="display-value"></p>
+    <p className="display-value">
       {displayValue}
+    </p>
   </div>
 );
     
