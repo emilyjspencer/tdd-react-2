@@ -159,13 +159,21 @@ describe('Calculator', () => {
 
     beforeEach(() => wrapper = shallow(<Calculator />));
 
-    it('selecting the multiplication operator updates the displayValue to be the sum of the storedValue and displayValue combined', () => {
+    it('selecting the multiplication operator updates the displayValue to be the product of the storedValue and displayValue combined', () => {
       wrapper.setState({ storedValue: '4' });
       wrapper.setState({ displayValue: '3'});
       wrapper.setState({ selectedOperator: '*' })
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('12');
     });
+
+    it('selecting the addition operator updates the displayValue to be the sum of the storedValue and the displayValue', () => {
+      wrapper.setState({ storedValue: '3' });
+      wrapper.setState({ displayValue: '5' });
+      wrapper.setState({ selectedOperator: '+' })
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('8');
+    })
   })
 
 });

@@ -23,11 +23,11 @@ class Calculator extends Component {
     storedValue = parseInt(storedValue, 10);
 
     if(selectedOperator === '*') {
-      
-        displayValue = storedValue * displayValue;
-       
-  
+      displayValue = storedValue * displayValue;
+    } else if(selectedOperator === '+') {
+      displayValue = storedValue + displayValue;
     }
+       
 
     displayValue = displayValue.toString();
 
