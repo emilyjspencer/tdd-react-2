@@ -1,0 +1,22 @@
+.keypad-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: var(--keypad-height);
+  padding: 2%;
+  width: var(--keypad-width);
+}
+
+.numbers-container {
+  display: flex;
+  flex-direction: wrap;
+  height: wrap;
+  width: 75%; 
+}
+
+.operators-container {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 25%;
+}
