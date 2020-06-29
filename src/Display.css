@@ -5,8 +5,7 @@
     height: var(--display-height);
     padding: 0 4%;
     width: var(--display-width);
-    text-align: center;
-    margin: 55px;
+
 }
 
 .display-value {

@@ -9,8 +9,9 @@
 
 .numbers-container {
   display: flex;
-  flex-direction: wrap;
-  height: wrap;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 80%;
   width: 75%; 
 }
 
