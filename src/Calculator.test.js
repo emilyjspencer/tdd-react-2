@@ -66,4 +66,16 @@ describe('Calculator', () => {
 
   });
 
+  describe('updateDisplay', () => {
+
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<Calculator />));
+
+    it('the method updates the displayValue when it is called', () => {
+      wrapper.instance().updateDisplay('8');
+      expect(wrapper.state('displayValue')).toEqual('8');
+    });
+  });
+
 });
