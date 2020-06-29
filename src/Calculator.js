@@ -13,6 +13,18 @@ class Calculator extends Component {
       storedValue: ''
   }
 
+  callOperator = () => {
+
+  };
+
+  setOperator = () => {
+    
+  };
+
+  updateDisplay = () => {
+
+  };
+
   render() {
 
     const { displayValue, numbers, operators } = this.state;
