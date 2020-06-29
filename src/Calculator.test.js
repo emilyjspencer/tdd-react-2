@@ -173,7 +173,17 @@ describe('Calculator', () => {
       wrapper.setState({ selectedOperator: '+' })
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('8');
-    })
-  })
+    });
+
+    it('selecting the subtraction operator updates the displayValue so that it is the difference of the storedValue and the displayValue', () => {
+      wrapper.setState({ storedValue: '9' });
+      wrapper.setState({ displayValue: '4' });
+      wrapper.setState({ selectedOperator: '-' })
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('5');
+    });
+  });
+
+
 
 });
