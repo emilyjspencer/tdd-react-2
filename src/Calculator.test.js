@@ -108,6 +108,16 @@ describe('Calculator', () => {
       wrapper.instance().updateDisplay('ce');
       expect(wrapper.state('displayValue')).toEqual('6')
     });
+
+    it('no matter how many times "." is entered, it only appears once', () => {
+      wrapper.instance().updateDisplay('4')
+      wrapper.instance().updateDisplay('.');
+      wrapper.instance().updateDisplay('.');
+      wrapper.instance().updateDisplay('5');
+      wrapper.instance().updateDisplay('.');
+      wrapper.instance().updateDisplay('.');
+      expect(wrapper.state('displayValue')).toEqual('4.5');
+    });
   });
 
 });

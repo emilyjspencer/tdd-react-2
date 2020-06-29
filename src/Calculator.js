@@ -24,6 +24,8 @@ class Calculator extends Component {
   updateDisplay = (value) => {
     let { displayValue } = this.state;
 
+    if(value === '.' && displayValue.includes('.')) value = '';
+
     if(value === 'ce') {
       displayValue = displayValue.substr(0, displayValue.length - 1);
       if (displayValue === '') displayValue = '0';
