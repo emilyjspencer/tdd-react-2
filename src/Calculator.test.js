@@ -76,6 +76,12 @@ describe('Calculator', () => {
       wrapper.instance().updateDisplay('8');
       expect(wrapper.state('displayValue')).toEqual('8');
     });
+
+    it('concatenates the latest displayValue with the last state value', () => {
+      wrapper.instance().updateDisplay('2');
+      wrapper.instance().updateDisplay('3');
+      expect(wrapper.state('displayValue')).toEqual('23');
+    });
   });
 
 });
