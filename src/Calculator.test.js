@@ -101,6 +101,13 @@ describe('Calculator', () => {
       wrapper.instance().updateDisplay('0');
       expect(wrapper.state('displayValue')).toEqual('0');
     });
+
+    it('pressing ce removes the most recently added value of displayValue', () => {
+      wrapper.instance().updateDisplay('6');
+      wrapper.instance().updateDisplay('5');
+      wrapper.instance().updateDisplay('ce');
+      expect(wrapper.state('displayValue')).toEqual('6')
+    });
   });
 
 });
