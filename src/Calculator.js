@@ -15,6 +15,25 @@ class Calculator extends Component {
 
   callOperator = () => {
 
+    let { displayValue, selectedOperator, storedValue } = this.state;
+
+    const updateStoredValue = displayValue;
+
+    displayValue = parseInt(displayValue, 10);
+    storedValue = parseInt(storedValue, 10);
+
+    if(selectedOperator === '*') {
+      
+        displayValue = storedValue * displayValue;
+       
+  
+    }
+
+    displayValue = displayValue.toString();
+
+    selectedOperator = '';
+
+    this.setState({ displayValue, selectedOperator, storedValue: updateStoredValue });
   };
 
   setOperator = (value) => {

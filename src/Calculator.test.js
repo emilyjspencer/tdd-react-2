@@ -153,4 +153,19 @@ describe('Calculator', () => {
     });
   });
 
+  describe('callOperator', () => {
+
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<Calculator />));
+
+    it('selecting the multiplication operator updates the displayValue to be the sum of the storedValue and displayValue combined', () => {
+      wrapper.setState({ storedValue: '4' });
+      wrapper.setState({ displayValue: '3'});
+      wrapper.setState({ selectedOperator: '*' })
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('12');
+    });
+  })
+
 });
